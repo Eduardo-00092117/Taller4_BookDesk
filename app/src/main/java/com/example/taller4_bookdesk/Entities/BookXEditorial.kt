@@ -13,12 +13,12 @@ data class BookXEditorial(
         parentColumns = ["id"],
         childColumns = ["edit_id"]
     )
-    @ColumnInfo(name = "id") val edit_id: Int,
+    @ColumnInfo(name = "edit_id") val edit_id: Int,
 
     @ForeignKey(
         entity = Book::class,
         parentColumns = ["id"],
         childColumns = ["book_id"]
     )
-    @ColumnInfo(name = "id") val book_id: Int
+    @ColumnInfo(name = "book_id") val book_id: Int
 )

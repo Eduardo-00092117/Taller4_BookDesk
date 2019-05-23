@@ -16,6 +16,6 @@ interface BookXTagDao {
     @Query("SELECT * FROM tag_table INNER JOIN book_x_tag ON book_x_tag.tag_id = tag_table.id WHERE tag_id=:tagID")
     fun selectTag(tagID: Int): LiveData<List<Tag>>
 
-    @Query("SELECT * FROM author_table INNER JOIN book_x_tag ON book_x_tag.tag_id = author_table.id WHERE tag_id=:AuthorID")
-    fun selectAuthors(AuthorID: Int): LiveData<List<Author>>
+    @Query("SELECT * FROM book_table INNER JOIN book_x_tag ON book_x_tag.book_id = book_table.id WHERE book_id=:BookID")
+    fun selectBooks(BookID: Int): LiveData<List<Book>>
 }
