@@ -13,12 +13,12 @@ data class BookXTag(
         parentColumns = ["id"],
         childColumns = ["tag_id"]
     )
-    @ColumnInfo(name = "id") val tag_id: Int,
+    @ColumnInfo(name = "tag_id") val tag_id: Int,
 
     @ForeignKey(
         entity = Book::class,
         parentColumns = ["id"],
         childColumns = ["book_id"]
     )
-    @ColumnInfo(name = "id") val book_id: Int
+    @ColumnInfo(name = "book_id") val book_id: Int
 )

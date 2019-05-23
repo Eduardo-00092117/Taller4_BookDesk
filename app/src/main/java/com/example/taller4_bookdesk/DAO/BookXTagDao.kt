@@ -5,18 +5,17 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.taller4_bookdesk.Entities.Author
 
 import com.example.taller4_bookdesk.Entities.Book
+import com.example.taller4_bookdesk.Entities.Tag
 
 @Dao
 interface BookXTagDao {
 
-    @Query("SELECT * from book_table ORDER BY id ASC")
-    fun getAllWords(): LiveData<List<Book>>
+    @Query("SELECT * FROM tag_table INNER JOIN book_x_tag ON book_x_tag.tag_id = tag_table.id WHERE tag_id=:tagID")
+    fun selectTag(tagID: Int): LiveData<List<Tag>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(book: Book)
-
-    @Query("DELETE FROM book_table")
-    fun deleteAll()
+    @Query("SELECT * FROM author_table INNER JOIN book_x_tag ON book_x_tag.tag_id = author_table.id WHERE tag_id=:AuthorID")
+    fun selectAuthors(AuthorID: Int): LiveData<List<Author>>
 }
