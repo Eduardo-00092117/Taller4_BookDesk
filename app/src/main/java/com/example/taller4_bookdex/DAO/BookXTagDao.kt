@@ -8,7 +8,7 @@ import androidx.room.Query
 import com.example.taller4_bookdesk.Entities.*
 
 @Dao
-interface bookXEditorialDao {
+interface BookXTagDao {
 
     @Query("SELECT * FROM tag_table INNER JOIN book_x_tag ON book_x_tag.tag_id = tag_table.id WHERE tag_id=:tagID")
     fun selectTag(tagID: Int): LiveData<List<Tag>>

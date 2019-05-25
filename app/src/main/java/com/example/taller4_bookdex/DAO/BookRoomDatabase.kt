@@ -11,13 +11,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [Book::class], version = 1)
+@Database(entities = [Book::class,Author::class,Tag::class,Editorial::class,BookXEditorial::class,BookXAuthor::class,
+BookXTag::class], version = 1,exportSchema = false)
 abstract class BookRoomDatabase : RoomDatabase() {
 
     abstract fun BookDao(): BookDao
     abstract fun AuthorDao(): AuthorDao
     abstract fun EditorialDao(): EditorialDao
-    abstract fun BookXTagDao(): bookXEditorialDao
+    abstract fun BookXTagDao(): BookXTagDao
     abstract fun TagDao(): TagDao
     abstract fun BookXAuthorDao(): BookXAuthorDao
     abstract fun BookXEditorialDao(): BookXEditorialDao
@@ -105,7 +106,7 @@ abstract class BookRoomDatabase : RoomDatabase() {
                    tagDao.insert(tag)
 
         }
-               suspend fun populateDatabase(BookXTagDao: bookXEditorialDao) {
+               suspend fun populateDatabase(BookXTagDao: BookXTagDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
                    BookXTagDao.deleteAll()

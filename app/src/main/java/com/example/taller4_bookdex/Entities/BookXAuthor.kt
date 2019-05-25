@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 
 @Entity(tableName = "book_x_author",
     primaryKeys = ["author_id", "book_id"])
-data class BookXEditorial(
+data class BookXAuthor(
     @ForeignKey(
         entity = Author::class,
         parentColumns = ["id"],
