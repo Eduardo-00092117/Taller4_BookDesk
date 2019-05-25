@@ -18,10 +18,10 @@ interface BookDao {
     fun getfavBooks(): LiveData<List<Book>>
 
     @Query("UPDATE book_table set Favorito=1 WHERE id=:IdBook")
-    fun makefavBooks(IdBook: Int): LiveData<List<Book>>
+    fun makefavBooks(IdBook: Int)
 
     @Query("UPDATE book_table set Favorito=0 WHERE id=:IdBook")
-    fun unfavBooks(IdBook: Int): LiveData<List<Book>>
+    fun unfavBooks(IdBook: Int)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(book: Book)
