@@ -10,7 +10,7 @@ import com.example.taller4_bookdesk.Entities.Tag
 
 class BookRepository(private val Autor : AuthorDao,
                      private val Book : BookDao,
-                     private val BookxTag : BookXTagDao,
+                     private val BookxTag : bookXEditorialDao,
                      private val Editorial : EditorialDao,
                      private val Tag : TagDao,
                      private val EditorialxBook : BookXEditorialDao,
@@ -29,6 +29,10 @@ class BookRepository(private val Autor : AuthorDao,
 
     @WorkerThread
     suspend fun insertBook(book : Book) = Book.insert(book)
+
+    fun favBook(book:Book) = Book.makefavBooks(book.id)
+
+    fun unfavBook(book:Book) = Book.unfavBooks(book.id)
 
     fun getAllFavorites() : LiveData<List<Book>> = Book.getfavBooks()
 
@@ -66,4 +70,4 @@ class BookRepository(private val Autor : AuthorDao,
     fun selectBookTag(BookId : Int) : LiveData<List<Book>> = BookxTag.selectBooks(BookId)
 
     fun selectTag(TagId : Int) : LiveData<List<Tag>> = BookxTag.selectTag(TagId)
- }
+}

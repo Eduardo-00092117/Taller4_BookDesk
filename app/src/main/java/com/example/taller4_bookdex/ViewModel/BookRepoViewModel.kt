@@ -33,10 +33,9 @@ class BookRepoViewModel(application: Application): AndroidViewModel(application)
         repository.insertBook(book)
     }
 
-
-
     //Para cambiar el valor booleano de favorito
-    /*fun update(book:Book)= viewModelScope.launch(Dispatchers.IO){
-        repository.update(book)
-    }*/
+    fun update(book:Book)= viewModelScope.launch(Dispatchers.IO){
+        if(book.isFavorite==0) repository.favBook(book)
+        else repository.unfavBook(book)
+    }
 }
