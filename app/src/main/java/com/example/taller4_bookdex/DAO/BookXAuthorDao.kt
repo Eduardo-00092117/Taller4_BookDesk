@@ -8,6 +8,7 @@ import androidx.room.Query
 import com.example.taller4_bookdesk.Entities.Author
 
 import com.example.taller4_bookdesk.Entities.Book
+import com.example.taller4_bookdesk.Entities.BookXAuthor
 import com.example.taller4_bookdesk.Entities.Tag
 
 @Dao
@@ -19,4 +20,10 @@ interface BookXAuthorDao {
 
     @Query("SELECT * FROM book_table INNER JOIN book_x_author ON book_x_author.book_id = book_table.id WHERE book_id=:BookID")
     fun selectBook(BookID: Int): LiveData<List<Book>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(BXA: BookXAuthor)
+
+    @Query("DELETE FROM book_x_author")
+    fun deleteAll()
 }

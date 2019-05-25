@@ -1,4 +1,4 @@
-package com.example.taller4_bookdesk.ViewModel
+package com.example.taller4_bookdex.ViewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

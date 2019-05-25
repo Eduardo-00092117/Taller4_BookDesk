@@ -1,4 +1,4 @@
-package com.example.taller4_bookdesk
+package com.example.taller4_bookdex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

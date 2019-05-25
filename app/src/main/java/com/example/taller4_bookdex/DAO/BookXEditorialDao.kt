@@ -8,6 +8,7 @@ import androidx.room.Query
 import com.example.taller4_bookdesk.Entities.Author
 
 import com.example.taller4_bookdesk.Entities.Book
+import com.example.taller4_bookdesk.Entities.BookXEditorial
 import com.example.taller4_bookdesk.Entities.Editorial
 
 @Dao
@@ -21,6 +22,9 @@ interface BookXEditorialDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(book: Book)
 
-    @Query("DELETE FROM book_table")
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(BXE: BookXEditorial)
+
+    @Query("DELETE FROM book_x_edit")
     fun deleteAll()
 }

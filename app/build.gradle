@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.taller4_bookdesk"
+        applicationId "com.example.taller4_bookdex"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
