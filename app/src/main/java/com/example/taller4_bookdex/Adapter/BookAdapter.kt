@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taller4_bookdesk.Entities.Book
 import com.example.taller4_bookdesk.R
-
 
 /*
 class BookAdapter internal constructor(
@@ -23,16 +23,14 @@ class BookAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
-        val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
+        val itemView = inflater.inflate(R.layout.cardview_book, parent, false)
         return BookViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val current = books[position]
-        holder.bookItemView.text = current.word
-    }
+     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(books[position], clickListener)
 
-    internal fun setWords(books: List<Book>) {
+
+     internal fun setBooks(books: List<Book>) {
         this.books = books
         notifyDataSetChanged()
     }
