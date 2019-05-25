@@ -70,6 +70,10 @@ abstract class BookRoomDatabase : RoomDatabase() {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
             bookDao.deleteAll()
+            var book= Book(0,"50 sombres de Grey","uf483y89","Latigazos","3",0)
+            bookDao.insert(book)
+            book = Book(1,"pokemony","uf483y89","pikas","2",0)
+            bookDao.insert(book)
 
         }
                suspend fun populateDatabase(authorDao: AuthorDao) {
