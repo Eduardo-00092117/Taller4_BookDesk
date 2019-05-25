@@ -30,6 +30,8 @@ class BookRepository(private val Autor : AuthorDao,
     @WorkerThread
     suspend fun insertBook(book : Book) = Book.insert(book)
 
+    fun getAllFavorites() : LiveData<List<Book>> = Book.getfavBooks()
+
     fun deleteBookAll() = Book.deleteAll()
 
     //----------------------------------------------------------------------------------------
