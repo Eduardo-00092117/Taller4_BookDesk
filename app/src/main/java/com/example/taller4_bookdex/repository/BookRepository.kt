@@ -25,7 +25,7 @@ class BookRepository(private val Autor : AuthorDao,
     fun deleteAutorAll() = Autor.deleteAll()
 
     //----------------------------------------------------------------------------------------
-    fun getAllBook() : LiveData<List<Book>> = Book.getAllWords()
+    fun getAllBook() : LiveData<List<Book>> = Book.getAllBooks()
 
     @WorkerThread
     suspend fun insertBook(book : Book) = Book.insert(book)

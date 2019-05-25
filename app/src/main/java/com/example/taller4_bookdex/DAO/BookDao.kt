@@ -12,7 +12,13 @@ import com.example.taller4_bookdesk.Entities.Book
 interface BookDao {
 
     @Query("SELECT * from book_table ORDER BY id ASC")
-    fun getAllWords(): LiveData<List<Book>>
+    fun getAllBooks(): LiveData<List<Book>>
+
+    @Query("SELECT * from book_table WHERE book_table.Favorito=1 ORDER BY id ASC")
+    fun getfavBooks(): LiveData<List<Book>>
+
+    @Query("UPDATE book_table set Favorito=1 WHERE id=:IdBook")
+    fun makefavBooks(IdBook: Int): LiveData<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(book: Book)
