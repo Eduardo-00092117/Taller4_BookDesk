@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <ImageView
+                    android:id="@+id/Iv_book_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    android:layout_marginBottom="25dp"/>
+
+            <TextView
+                    android:id="@+id/tv_book_namae"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_below="@id/Iv_book_cover"
+                    android:fontFamily="sans-serif-light"
+
+            />
+
+            <TextView
+                    android:id="@+id/textview2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Autor: "
+
+                    android:layout_below="@+id/tv_book_namae"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"
+            />
+
+            <TextView
+                    android:id="@+id/tv_author_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview2"
+                    android:layout_below="@id/tv_book_namae"
+
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"
+            />
+
+            <TextView
+                    android:id="@+id/textview2.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellido autor: "
+
+                    android:layout_below="@+id/textview2"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"/>
+
+            <TextView
+                    android:id="@+id/tv_author_lastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview2.5"
+                    android:layout_below="@id/tv_author_name"
+
+                    android:textColor="@android:color/black"
+
+
+                    android:fontFamily="sans-serif-light"
+
+            />
+
+            <TextView
+                    android:id="@+id/textview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ISBN: "
+
+                    android:layout_below="@+id/tv_author_lastName"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"/>
+
+            <TextView
+                    android:id="@+id/tv_book_isbn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview3"
+                    android:layout_below="@id/tv_author_lastName"
+
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"
+
+            />
+
+            <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edicion: "
+
+                    android:layout_below="@+id/tv_book_isbn"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"/>
+
+            <TextView
+                    android:id="@+id/tv_book_edicion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview4"
+                    android:layout_below="@id/tv_book_isbn"
+
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"
+
+            />
+
+            <TextView
+                    android:id="@+id/textview5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editorial: "
+                    android:layout_below="@+id/tv_book_edicion"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"/>
+
+            <TextView
+                    android:id="@+id/tv_book_editorial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview5"
+                    android:layout_below="@id/tv_book_edicion"
+
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"
+            />
+
+            <TextView
+                    android:id="@+id/textview6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resumen: "
+                    android:layout_below="@+id/tv_book_editorial"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="sans-serif-light"/>
+
+            <TextView
+                    android:id="@+id/tv_book_resumen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="na"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview6"
+                    android:layout_below="@id/tv_book_editorial"
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"
+            />
+            <TextView
+                    android:id="@+id/textview7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genero: "
+                    android:layout_below="@+id/tv_book_resumen"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"/>
+            <TextView
+                    android:id="@+id/tv_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/textview7"
+                    android:layout_below="@id/tv_book_resumen"
+
+                    android:textColor="@android:color/black"
+
+                    android:fontFamily="sans-serif-light"
+
+
+            />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>
