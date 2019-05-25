@@ -10,7 +10,7 @@ import com.example.taller4_bookdesk.Entities.Tag
 
 class BookRepository(private val Autor : AuthorDao,
                      private val Book : BookDao,
-                     private val BookxTag : BookXTagDao,
+                     private val BookxTag : bookXEditorialDao,
                      private val Editorial : EditorialDao,
                      private val Tag : TagDao,
                      private val EditorialxBook : BookXEditorialDao,
