@@ -30,6 +30,10 @@ class BookRepository(private val Autor : AuthorDao,
     @WorkerThread
     suspend fun insertBook(book : Book) = Book.insert(book)
 
+    fun favBook(book:Book) = Book.makefavBooks(book.id)
+
+    fun unfavBook(book:Book) = Book.unfavBooks(book.id)
+
     fun getAllFavorites() : LiveData<List<Book>> = Book.getfavBooks()
 
     fun deleteBookAll() = Book.deleteAll()
@@ -66,4 +70,4 @@ class BookRepository(private val Autor : AuthorDao,
     fun selectBookTag(BookId : Int) : LiveData<List<Book>> = BookxTag.selectBooks(BookId)
 
     fun selectTag(TagId : Int) : LiveData<List<Tag>> = BookxTag.selectTag(TagId)
- }
+}
