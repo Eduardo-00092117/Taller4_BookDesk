@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        bookAdapter = BooksAdapter(this, { book: Book -> bookFavorito(book) }, { book: Book -> triggerActivity(book) })
+        bookAdapter = BooksAdapter(this, { book: Book -> bookFavorito(book) },{ book: Book -> triggerActivity(book) })
 
 
 
@@ -50,9 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun triggerActivity(book: Book) {
 /*
-        val libroBundle = Bundle()
-        libroBundle.putParcelable("LIBRO", book)
-        startActivity(Intent(this, BookViewerActivity::class.java).putExtras(libroBundle))
+
 */
     }
 
