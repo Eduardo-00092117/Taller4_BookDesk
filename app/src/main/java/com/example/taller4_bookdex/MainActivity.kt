@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taller4_bookdesk.Adapter.BooksAdapter
 import com.example.taller4_bookdesk.Entities.Book
 import com.example.taller4_bookdex.ViewModel.BookRepoViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.Observer
 
 class MainActivity : AppCompatActivity() {
@@ -34,11 +35,17 @@ class MainActivity : AppCompatActivity() {
             books?.let{bookAdapter.setBooks(it)}
         })
 
+        btn_fav.setOnClickListener(){
+            bookRepoViewModel.favBooks.observe(this,androidx.lifecycle.Observer{books ->
+                books?.let{bookAdapter.setBooks(it)}
+            })
+        }
 
-
-
-
-
+        btn_todos.setOnClickListener(){
+            bookRepoViewModel.allBooks.observe(this,androidx.lifecycle.Observer { books->
+                books?.let{bookAdapter.setBooks(it)}
+            })
+        }
 
     }
 
