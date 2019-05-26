@@ -48,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
+        btnAgregar.setOnClickListener {
+            var intent = Intent(this, MainActivityInsert::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun triggerActivity(book: Book) {

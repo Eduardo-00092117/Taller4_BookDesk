@@ -24,16 +24,26 @@
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-        <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1"/>
-        <Button android:text="Favoritos" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="3"
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        <Button android:text="Favoritos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="3"
         android:id="@+id/btn_fav"
         />
     </LinearLayout>
 
+    <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar libro"/>
 
 <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
                                            android:id="@+id/list_books"
-                                           android:layout_height="wrap_content">
+                                           android:layout_height="match_parent">
 
 </androidx.recyclerview.widget.RecyclerView>
 

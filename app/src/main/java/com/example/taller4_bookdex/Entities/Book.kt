@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "book_table")
-data class Book(@PrimaryKey @ColumnInfo(name = "id") val id: Int,
+data class Book(@PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
                 @ColumnInfo(name = "Titulo") val titulo: String,
                 @ColumnInfo(name = "ISBN") val isbn: String,
                 @ColumnInfo(name = "Resumen") val resumen: String,

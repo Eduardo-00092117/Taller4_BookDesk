@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(entities = [Book::class,Author::class,Tag::class,Editorial::class,BookXEditorial::class,BookXAuthor::class,
-BookXTag::class], version = 1,exportSchema = false)
+BookXTag::class], version = 2,exportSchema = false)
 abstract class BookRoomDatabase : RoomDatabase() {
 
     abstract fun BookDao(): BookDao
@@ -73,7 +73,7 @@ abstract class BookRoomDatabase : RoomDatabase() {
             bookDao.deleteAll()
             var book= Book(0,"50 sombres de Grey","uf483y89","Latigazos","3",0)
             bookDao.insert(book)
-            book = Book(1,"pokemony","uf483y89","pikas","2",1)
+            book = Book(0,"pokemony","uf483y89","pikas","2",1)
             bookDao.insert(book)
 
         }
