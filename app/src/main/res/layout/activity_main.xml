@@ -20,13 +20,14 @@
         <Button
                 android:text="Mostar todos los libros"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="3"/>
-
+                android:layout_height="wrap_content" android:id="@+id/btn_todos" android:layout_weight="3"/>
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1"/>
-        <Button android:text="Buscar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="3"/>
+        <Button android:text="Favoritos" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="3"
+        android:id="@+id/btn_fav"
+        />
     </LinearLayout>
 
 
