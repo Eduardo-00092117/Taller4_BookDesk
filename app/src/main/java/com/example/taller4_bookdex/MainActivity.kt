@@ -13,6 +13,7 @@ import java.util.Observer
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var bookRepoViewModel: BookRepoViewModel
     private lateinit var bookAdapter: BooksAdapter
 
@@ -23,22 +24,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bookAdapter = BooksAdapter(this, { book: Book -> bookFavorito(book) },{ book: Book -> triggerActivity(book) })
-
-
-
-
-
-
-
         val recyclerView = findViewById<RecyclerView>(R.id.list_books)
         recyclerView.adapter = bookAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         bookRepoViewModel = ViewModelProviders.of(this).get(BookRepoViewModel::class.java)
 
-        bookRepoViewModel.allBooks.observe(this,androidx.lifecycle.Observer { book->{
-            bookAdapter.setBooks(book)
-        } })
+        bookRepoViewModel.allBooks.observe(this,androidx.lifecycle.Observer { books->
+            books?.let{bookAdapter.setBooks(it)}
+        })
 
 
 

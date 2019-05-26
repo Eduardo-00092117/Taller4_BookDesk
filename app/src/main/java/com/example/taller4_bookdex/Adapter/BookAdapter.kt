@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.cardview_book.view.*
 
 class BooksAdapter internal  constructor(context: Context, val clickListenerBoton: (Book) -> Unit, val clickListenerViewHolder: (Book)->Unit ) : RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
     private var books: List<Book> = emptyList()
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
     public var switch = true
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,7 +31,7 @@ class BooksAdapter internal  constructor(context: Context, val clickListenerBoto
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(book: Book, clickListenerBoton: (Book) -> Unit, clickListenerViewHolder:(Book) -> Unit) = with(itemView) {
             Glide.with(itemView.context)
