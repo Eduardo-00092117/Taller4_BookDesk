@@ -3,6 +3,7 @@ package com.example.taller4_bookdex
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         })
         bookViewModel.marcarODesmarcarFav(book)
         */
+
     }
 
 

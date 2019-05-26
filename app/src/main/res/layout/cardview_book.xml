@@ -17,11 +17,7 @@
                 android:lines="1"
                 android:padding="8dp"
                 android:text="pasty"
-
                 android:layout_alignBottom="@id/Iv_book_portada"
-
-
-
                 android:textColor="#ffff"
                 android:textSize="25sp"/>
     </RelativeLayout>

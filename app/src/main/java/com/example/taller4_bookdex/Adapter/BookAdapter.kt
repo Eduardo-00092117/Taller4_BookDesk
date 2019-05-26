@@ -1,6 +1,7 @@
 package com.example.taller4_bookdesk.Adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,10 +41,9 @@ class BooksAdapter internal  constructor(context: Context, val clickListenerBoto
                 .into(Iv_book_portada)
             Tv_book_name.text = book.titulo
 
-            this.setOnClickListener(){
-                clickListenerViewHolder(book)
+            this.setOnClickListener{
+                clickListenerBoton(book)
             }
-
         }
     }
 }
